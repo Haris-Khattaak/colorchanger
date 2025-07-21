@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Changer</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#colorCode {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Color Changer</h1>
+    <button onclick="changeColor()">Change Background Color</button>
+    <p id="colorCode">Current Color: #ffffff</p>
+  </div>
+
+  <script>
+    function changeColor() {
+  // Generate random values for RGB
+  const r = Math.floor(Math.random() * 256); // 0–255
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+
+  // Create RGB color string
+  const rgbColor = `rgb(${r}, ${g}, ${b})`;
+
+  // Change background color
+  document.body.style.backgroundColor = rgbColor;
+
+  // Show color code
+  document.getElementById("colorCode").textContent = `Current Color: ${rgbColor}`;
+}
+
+  </script>
+</body>
+</html>
